@@ -1,0 +1,11 @@
+{
+  "name": "rail-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix travel-rescue run dev",
+    "build": "npm --prefix travel-rescue run build",
+    "test": "npm --prefix travel-rescue run test",
+    "lint": "npm --prefix travel-rescue run lint"
+  }
+}

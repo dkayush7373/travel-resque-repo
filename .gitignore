@@ -1,0 +1,6 @@
+# Dependencies & environments
+node_modules/
+.next/
+.gemini/
+.DS_Store
+*.log
