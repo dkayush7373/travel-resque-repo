@@ -63,13 +63,14 @@ For each completed feature, fix, refactor, test suite, or documentation update:
      git log -1 --format="%H | %an | %ae | %s"
      ```
    - Confirm `%ae` is `dkayush73@gmail.com` and `%an` is `dkayush7373`.
-7. **Push to Remote**:
-   - Push to current branch: `git push origin <branch>`
+7. **Push Directly to Default Branch (`main`)**:
+   - Push to default branch: `git push origin main`
+   - Commits must reside directly on the default branch (`main`) to immediately trigger contribution graph updates. Never leave commits solely on feature branches.
 8. **Verify Remotely**:
    - Compare local HEAD with remote branch tip:
      ```bash
      git rev-parse HEAD
-     git ls-remote origin <branch>
+     git ls-remote origin main
      ```
    - Record full 40-character SHA and commit URL:
      `https://github.com/<owner>/<repo>/commit/<FULL_SHA>`
@@ -82,7 +83,7 @@ For each completed feature, fix, refactor, test suite, or documentation update:
 - **Never Rewrite History for Past Attribution**: If past commits have incorrect emails, never alter git history unilaterally.
 - **Zero Secrets**: Never commit `.env`, `.env.local`, API keys, private tokens, passwords, or build artifacts. Verify against `.gitignore`.
 - **Preserve User Changes**: Never overwrite or discard unstaged work from the user.
-- **Protected Branch Guard**: If the target branch is protected, create a feature branch, push, and open a Pull Request. Warn the user that GitHub squash-merging collapses all individual commits into one commit (recommend "Create a merge commit" or "Rebase and merge" instead).
+- **No Squash Merges**: Never squash-merge or recommend squash merges, as squash merges collapse distinct commits into a single commit and erase individual contributions. Use fast-forward merges, merge commits, or direct pushes to `main`.
 - **Halt on Ambiguity**: On any merge conflict, auth failure, remote mismatch, or ambiguous repository state, stop execution immediately and report with full diagnostic output.
 
 ---

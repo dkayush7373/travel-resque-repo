@@ -16,7 +16,7 @@ This repository enforces strict Git hygiene, authorship attribution, and quality
 
 ---
 
-## 2. Commit Discipline: Logical Steps
+## 2. Commit Discipline: Logical Steps & Direct Main Delivery
 
 - **No Mega-Commits**: Every distinct feature, fix, refactor, or configuration change must be committed as its own logical unit.
 - **Quality Gates First**:
@@ -27,8 +27,9 @@ This repository enforces strict Git hygiene, authorship attribution, and quality
   - `git add <exact-path>` (no blind `git add .`).
 - **Conventional Commits**:
   - Standard format: `type(scope): description`.
-- **Remote Push & Verification**:
-  - Commit locally, push to upstream branch, and verify with `git ls-remote origin <branch>`.
+- **Default Branch (`main`) Delivery**:
+  - To ensure every single commit counts immediately on the GitHub profile graph, work must always be committed to `main` (or immediately merged into `main` without squashing).
+  - Push directly to `origin main` and verify with `git ls-remote origin main`.
   - Record the commit hash and URL: `https://github.com/<owner>/<repo>/commit/<SHA>`.
 
 ---
@@ -46,5 +47,7 @@ This repository enforces strict Git hygiene, authorship attribution, and quality
 ## 4. GitHub Contribution Integrity
 
 - Commits must use the verified email associated with the GitHub account (`dkayush73@gmail.com`).
-- Commits must reside on the default branch (or be merged into it) in a recognized repository.
+- Commits must reside on the default branch (`main`) to be counted by GitHub. Never leave commits solely on feature branches.
+- Never use "Squash and merge" as it collapses multiple commits into one single commit. Always preserve distinct commits.
 - Contribution graph updates can take up to 24 hours to reflect on GitHub profile pages.
+
